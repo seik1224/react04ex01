@@ -22,7 +22,7 @@ ex4) 백분율 :: const percentage = Math.floor((부분 / 전체) \* 100);
 
 Tip1. on("change", callback)는 MotionValue가 변경될 때마다 특정 작업을 수행할 수 있게 해줌
 
-```bash
+```jsx
 currentImageIndex.on("change", (latest) => {
   console.log(`스크롤 진행도: ${latest}`);
 });
@@ -32,15 +32,16 @@ currentImageIndex.on("change", (latest) => {
 
 ### 2. GSAP으로 할 경우
 
-Tip1. 스크롤트리거에는 onUpdate를 사용해보세요.
-Tip2. useGsapScrollTrigger 훅을 사용해보세요.
+Tip. 스크롤트리거에는 onUpdate를 사용해보세요.
 
-```bash
+```jsx
 ScrollTrigger.create({
   trigger: ".element", // 트리거로 지정할 요소
   onUpdate: (self) => {
-    console.log(`스크롤 진행도: ${self.progress}, 스크롤 방향: ${self.direction}`);
-  }
+    console.log(
+      `스크롤 진행도: ${self.progress}, 스크롤 방향: ${self.direction}`
+    );
+  },
 });
 ```
 
